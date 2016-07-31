@@ -1,0 +1,39 @@
+#header{
+    height: 40px;
+    line-height: 40px;
+    background: #cccccc;
+}
+#login-info{
+    float: right;
+}
+#login-info div{
+    float: left;
+}
+#login-state{
+    margin-left: 50px;
+}
+
+#content{
+    margin-top: 50px;
+}
+#blog-list{
+    width: 800px;
+    float: left;
+}
+#blog-list li{
+    height: 100px;
+}
+#blog-list .left{
+    float: left;
+}
+#blog-list .right{
+    float: right;
+}
+#user-list{
+    width: 250px;
+    float: right;
+}
+#user-list li{
+    height: 30px;
+    line-height: 30px;
+}

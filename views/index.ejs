@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>博客首页</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+  </head>
+  <body>
+    <header id="header">
+        <div class="wrapper">
+            <img id="logo" src="/images/logo.png" alt=""/>
+            <div id="login-info">
+                <div>
+                    <span id="username"><%=loginUser?'欢迎：'+loginUser.username:''%></span>
+                </div>
+                <div id="login-state">
+                    <a href="/regist">注册</a> | <a href="/login">登录</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="content" class="wrapper">
+        <ul id="blog-list">
+            <%
+                for(var i=0; i<blogs.length; i++){
+                    var blog = blogs[i];
+            %>
+            <li>
+                <div class="left">
+                    <h2 class="title"><%=blog.title%></h2>
+
+                    <p class="content"><%=blog.content%></p>
+                </div>
+                <div class="right">
+                    <p class="author"><%=blog.username%></p>
+                    <p class="add-time">
+                        <%=  blog.add_time.getFullYear()+'-'+ (blog.add_time.getMonth()+1)+'-'+ blog.add_time.getDate()%>
+                    </p>
+                    <p class="click">120</p>
+                </div>
+            </li>
+            <%
+                }
+            %>
+
+        </ul>
+        <div id="user-list">
+            <h2>热门作者：</h2>
+            <ul>
+                <%
+                    for(var i=0; i<users.length;i++){
+                        var user = users[i];
+                  %>
+                <li><a href="#"><%=user.username%></a></li>
+               <%
+                }
+                 %>
+            </ul>
+        </div>
+    </div>
+  </body>
+</html>
